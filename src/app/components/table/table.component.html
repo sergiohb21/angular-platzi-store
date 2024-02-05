@@ -1,0 +1,57 @@
+<div class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource">
+
+    <!-- PositionId Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+  
+    <!-- Category Column -->
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Categoria </th>
+      <td mat-cell *matCellDef="let element"> {{element.category.name}} </td>
+    </ng-container>
+  
+    <!-- Image Column -->
+    <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef> Imagen </th>
+        <td mat-cell *matCellDef="let element">
+          <img [src]="element.images[0]" [alt]="element.description" style="width: 75px;">
+        </td>
+      </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} €</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Detalle </th>
+        <td mat-cell *matCellDef="let elem">
+          <button mat-icon-button (click)="showDetails(elem)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Selecciona pagina de prodcuto">
+</mat-paginator>
+</div>
+<!-- Detalle Producto -->
+  <app-product-detail [product]="selectedProduct"></app-product-detail>
+  
