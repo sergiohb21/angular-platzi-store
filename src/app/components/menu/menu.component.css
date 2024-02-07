@@ -1,0 +1,10 @@
+mat-toolbar{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;    
+    background-color: rgba(24, 145, 182, 0.527);
+}
+
+span {
+    cursor: pointer;
+}

@@ -10,8 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-table',
   standalone: true,
   imports: [MatTableModule, MatPaginatorModule, MatIconModule, ProductDetailComponent],
-  templateUrl: './table.component.html',
-  styleUrl: './table.component.css'
+  templateUrl: './product-table.component.html',
+  styleUrl: './product-table.component.css'
 })
 
 export class TableComponent implements AfterViewInit {
