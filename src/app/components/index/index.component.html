@@ -1,1 +1,19 @@
-<p>index works!</p>
+<h1>BIENVENIDOS A PLATZI STORE</h1>
+<div class="app">
+    @for (product of Products; track product) {
+        <div class="product">
+            <mat-card *ngIf="product" class="mat-elevation-z4">
+                <mat-card-header>
+                    <mat-card-title>{{ product.title }}</mat-card-title>
+            <mat-card-subtitle>Detalles</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <img [src]="product.images[0]" [alt]="product.description">
+                <p>Category: {{ product.category.name }}</p>
+                <p>Descripcion: {{ product.description }}</p>
+                <p>Precio: {{ product.price }} €</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+}
+</div>
