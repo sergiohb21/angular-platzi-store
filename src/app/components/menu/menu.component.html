@@ -1,7 +1,11 @@
 <mat-toolbar>
   <span routerLink="/">Bazar Platzi Store</span>
   <button mat-button routerLink="/">Inicio</button>
-  <button mat-button [matMenuTriggerFor]="menu">Poductos</button>
+  <button mat-button [matMenuTriggerFor]="menu">Productos</button>
+  <span class="cart-icon-container" (click)="toggleCart()">
+    <span class="cart-counter">{{ cartItemsCount }}</span>
+    <img src="assets/cart-icon.png" alt="Carrito de Compras">
+  </span>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/tabla">Tabla Productos</button>
   </mat-menu>

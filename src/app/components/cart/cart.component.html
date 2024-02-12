@@ -1,0 +1,19 @@
+<div class="cart-icon-container" (click)="toggleCart()">
+    <img src="assets/cart-icon.png" alt="Carrito de Compras">
+    <span class="cart-counter">{{ items.length }}</span>
+  </div>
+  
+  <aside class="cart-aside" [ngClass]="{ 'open': isCartOpen }">
+    <h2>Carrito de Compras</h2>
+    <div *ngIf="items.length > 0; else emptyCart">
+      <ul>
+        <li *ngFor="let item of items">{{ item.title }} - {{ item.price }} €</li>
+      </ul>
+      <p class="total">Total: {{ totalPrice }} €</p>
+      <button class="clear-button" (click)="clearCart()">Vaciar Carrito</button>
+    </div>
+    <ng-template #emptyCart>
+      <p>Tu carrito está vacío.</p>
+    </ng-template>
+  </aside>
+  

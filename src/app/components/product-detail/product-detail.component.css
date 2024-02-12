@@ -1,36 +1,47 @@
-/* Estilos para el componente mat-card */
-mat-card {
-    width: 300px; /* Ajusta el ancho según tus necesidades */
-    margin: 20px auto;
-  }
-  
-  /* Estilos para la imagen dentro del mat-card-content */
-  mat-card-content img {
-    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
-    max-height: 200px; /* Altura máxima de la imagen */
-    object-fit: cover; /* La imagen se ajusta manteniendo la relación de aspecto y cubriendo el área */
-    margin-bottom: 10px;
-  }
-  
-  /* Estilos para el contenido del mat-card */
-  mat-card-content {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Estilos para las etiquetas de párrafo */
-  mat-card-content p {
-    margin: 5px 0;
-  }
-  
-  /* Estilos para la mat-card-title y mat-card-subtitle */
-  mat-card-header {
-    background-color: #3f51b5; /* Cambia el color de fondo según tus preferencias */
-    color: white; /* Cambia el color del texto según tus preferencias */
-  }
-  
-  mat-card-title,
-  mat-card-subtitle {
-    color: white; /* Cambia el color del texto según tus preferencias */
-  }
-  
+/* product.component.css */
+
+.product-card {
+  width: 300px; /* Ancho del card */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: box-shadow 0.3s ease; /* Transición suave de la sombra */
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+}
+
+.product-header {
+  padding: 16px;
+  background-color: #f0f0f0; /* Color de fondo del encabezado */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.product-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.product-content {
+  padding: 16px;
+}
+
+.product-image {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.product-description {
+  margin-top: 10px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #f0f0f0; /* Color de fondo de las acciones */
+}

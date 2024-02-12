@@ -1,13 +1,18 @@
-<mat-card *ngIf="product" class="mat-elevation-z4">
-    <h1>Detalle producto</h1>
-    <mat-card-header>
-      <mat-card-title>{{ product.title }}</mat-card-title>
-      <mat-card-subtitle>Detalles</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <img [src]="product.images[0]" [alt]="product.description">
-      <p>Category: {{ product.category.name }}</p>
-      <p>Descripcion: {{ product.description }}</p>
-      <p>Precio: {{ product.price }} €</p>
-    </mat-card-content>
-  </mat-card>
+<mat-card *ngIf="product" class="product-card mat-elevation-z4">
+  <div class="product-header">
+    <div class="product-title">{{ product.title }}</div>
+  </div>
+  <div class="product-content">
+    <img class="product-image" [src]="product.images[0]" [alt]="product.description" (click)="toggleDescription()">
+    <p class="product-description" *ngIf="showDescription">Descripción: {{ product.description }}</p>
+    <p>Categoría: {{ product.category.name }}</p>
+    <p>Precio: {{ product.price }} €</p>
+  </div>
+  <div class="product-actions">
+    <button mat-icon-button color="{{ liked ? 'warn' : '' }}" aria-label="Me gusta" (click)="toggleLiked()">
+      <mat-icon>{{ liked ? 'favorite' : 'favorite_border' }}</mat-icon>
+    </button>
+    <button mat-button color="primary" (click)="addToCart(product)">Comprar</button>
+  </div>
+  
+</mat-card>
